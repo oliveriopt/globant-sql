@@ -17,3 +17,11 @@ A simple request API that interacts with AWS Athena to manage and retrieve emplo
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/oliveriopt/globant-sql
+
+
+## DB Schema 
+
+![My Image](https://github.com/oliveriopt/globant-sql/blob/master/db_diagram.png)
+
+## ETL Architecture
+![My Image](https://github.com/oliveriopt/globant-sql/blob/master/globate-2.drawio.png)
