@@ -9,7 +9,18 @@ app = Flask(__name__)
 LAMBDA_URL_1 = "https://iqcfqrojtvytayjd7a7oofx4ia0rohab.lambda-url.us-east-2.on.aws/"
 LAMBDA_URL_2 = "https://incunbm66qxyn2cu562vpweg3y0loejd.lambda-url.us-east-2.on.aws/"
 
-
+def json_to_dataframe(json_data):
+    """
+    Converts JSON data to a pandas DataFrame where the first row contains the column names.
+    """
+    # Assuming the JSON data is a list of dictionaries
+    if isinstance(json_data, list):
+        # Convert list of dictionaries into a DataFrame
+        df = pd.DataFrame(json_data)
+        return df
+    else:
+        return None
+    
 @app.route('/call-lambda-2', methods=['GET'])
 def call_lambda_2():
     # Get inputs from query parameters
