@@ -16,4 +16,4 @@ A simple request API that interacts with AWS Athena to manage and retrieve emplo
 ## Installation
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/employee-management-api.git
+   git clone https://github.com/oliveriopt/globant-sql
