@@ -1,7 +1,7 @@
 # Employee Management API
 
 ## Description
-A simple request API that interacts with AWS Athena to manage and retrieve employee data. This project demonstrates API development, database querying, and deployment using Docker.
+A simple request API that interacts with AWS Athena to manage and retrieve employee data. This project demonstrates API development, database querying.
 
 ## Features
 - REST API to query employee data from AWS Athena
