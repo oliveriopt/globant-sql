@@ -10,7 +10,7 @@ LAMBDA_URL_1 = "https://iqcfqrojtvytayjd7a7oofx4ia0rohab.lambda-url.us-east-2.on
 LAMBDA_URL_2 = "https://incunbm66qxyn2cu562vpweg3y0loejd.lambda-url.us-east-2.on.aws/"
 
 @app.route('/call-lambda-1', methods=['GET'])
-def call_lambda_2():
+def call_lambda_1():
     try:
         response = requests.get(LAMBDA_URL_1)
         response.raise_for_status()  # Raise an error if the request failed
