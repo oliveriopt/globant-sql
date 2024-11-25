@@ -21,6 +21,30 @@ def json_to_dataframe(json_data):
     else:
         return None
     
+@app.route('/call-lambda-1', methods=['GET'])
+def call_lambda_1():
+    # Get inputs from query parameters
+    input_string = request.args.get('input_string', default='', type=str)
+    year = request.args.get('year', default=0, type=int)
+
+    # Validate inputs
+    if not input_string or not year:
+        return jsonify({"error": "Both 'input_string' and 'year' are required."}), 400
+
+    try:
+        response = requests.get(LAMBDA_URL_1, params={"input_string": input_string, "year": year})
+        response.raise_for_status()  # Raise an error if the request failed
+        
+        # Convert the JSON response into a pandas DataFrame
+        lambda_1_data = response.json()
+        df_lambda_1 = json_to_dataframe(lambda_1_data)
+        
+        # Convert the DataFrame to JSON and return
+        return jsonify({"lambda_1_response": df_lambda_1.to_dict(orient='records')})
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @app.route('/call-lambda-2', methods=['GET'])
 def call_lambda_2():
     # Get inputs from query parameters
