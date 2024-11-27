@@ -25,6 +25,7 @@ def call_lambda_1():
 def call_lambda_2():
     try:
         response = requests.get(LAMBDA_URL_2)
+
         response.raise_for_status()  # Raise an error if the request failed
         
         lambda_2_data = response.json()
